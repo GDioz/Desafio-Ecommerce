@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "5lJQsd7Vxil/+9GtOHsEJ4YGo8T7S9nJ5RjBm5+XnOdhUMf/gT6wXWOFR59qpH0bywX6bZTUaEITuuSQ+LtAWg==",
+  "dgSpecHash": "CbKDzBNtXnaMQ5C9WXnglO5WLpfHJyKnGKVBWqIc1xfb51kl3zBjkqgzrw+r/AzIcdsc4O2ZNouZbWzTCkyMGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Application\\DF.Ecommerce.Application.csproj",
+  "projectFilePath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Application\\DF.Ecommerce.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\197363\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
-    "C:\\Users\\197363\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512",
-    "C:\\Users\\197363\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+    "C:\\Users\\gusta\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

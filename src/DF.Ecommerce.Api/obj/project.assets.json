@@ -8,10 +8,14 @@
           "Microsoft.CSharp": "4.7.0"
         },
         "compile": {
-          "lib/netstandard2.1/AutoMapper.dll": {}
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/AutoMapper.dll": {}
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
         }
       },
       "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
@@ -48,10 +52,14 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -64,10 +72,14 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {}
+          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {}
+          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Primitives/6.0.0": {
@@ -76,10 +88,14 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -88,10 +104,14 @@
       "Serilog/2.10.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/Serilog.dll": {}
+          "lib/netstandard2.1/Serilog.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Serilog.dll": {}
+          "lib/netstandard2.1/Serilog.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Serilog.Sinks.Console/4.0.1": {
@@ -100,19 +120,27 @@
           "Serilog": "2.10.0"
         },
         "compile": {
-          "lib/net5.0/Serilog.Sinks.Console.dll": {}
+          "lib/net5.0/Serilog.Sinks.Console.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Serilog.Sinks.Console.dll": {}
+          "lib/net5.0/Serilog.Sinks.Console.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -437,19 +465,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\197363\\.nuget\\packages\\": {}
+    "C:\\Users\\gusta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Api\\DF.Ecommerce.Api.csproj",
+      "projectUniqueName": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Api\\DF.Ecommerce.Api.csproj",
       "projectName": "DF.Ecommerce.Api",
-      "projectPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Api\\DF.Ecommerce.Api.csproj",
-      "packagesPath": "C:\\Users\\197363\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Api\\obj\\",
+      "projectPath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Api\\DF.Ecommerce.Api.csproj",
+      "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+      "outputPath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\197363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -457,21 +485,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://localiza.pkgs.visualstudio.com/_packaging/LocalizaAtivos%40Local/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Application\\DF.Ecommerce.Application.csproj": {
-              "projectPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Application\\DF.Ecommerce.Application.csproj"
+            "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Application\\DF.Ecommerce.Application.csproj": {
+              "projectPath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Application\\DF.Ecommerce.Application.csproj"
             },
-            "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj": {
-              "projectPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj"
+            "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj": {
+              "projectPath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj"
             },
-            "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\DF.Ecommerce.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\DF.Ecommerce.Infrastructure.csproj"
+            "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\DF.Ecommerce.Infrastructure.csproj": {
+              "projectPath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\DF.Ecommerce.Infrastructure.csproj"
             }
           }
         }
@@ -509,10 +536,29 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -521,7 +567,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.108\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
