@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "DF.Ecommerce.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DF.Ecommerce.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DF.Ecommerce.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DF.Ecommerce.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DF.Ecommerce.Domain/DF.Ecommerce.Domain.csproj",
+      "msbuildProject": "../DF.Ecommerce.Domain/DF.Ecommerce.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "DF.Ecommerce.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\197363\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\DF.Ecommerce.Infrastructure.csproj",
+      "projectName": "DF.Ecommerce.Infrastructure",
+      "projectPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\DF.Ecommerce.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\197363\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Infrastructure\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\197363\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://localiza.pkgs.visualstudio.com/_packaging/LocalizaAtivos%40Local/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj": {
+              "projectPath": "C:\\Users\\197363\\Documents\\Projetos\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.108\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

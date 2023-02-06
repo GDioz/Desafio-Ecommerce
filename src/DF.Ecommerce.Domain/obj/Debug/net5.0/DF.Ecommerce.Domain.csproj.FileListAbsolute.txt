@@ -1,0 +1,12 @@
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\bin\Debug\net5.0\DF.Ecommerce.Domain.deps.json
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\bin\Debug\net5.0\DF.Ecommerce.Domain.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\bin\Debug\net5.0\ref\DF.Ecommerce.Domain.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\bin\Debug\net5.0\DF.Ecommerce.Domain.pdb
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.csproj.AssemblyReference.cache
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.AssemblyInfoInputs.cache
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.AssemblyInfo.cs
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.csproj.CoreCompileInputs.cache
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\ref\DF.Ecommerce.Domain.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Domain\obj\Debug\net5.0\DF.Ecommerce.Domain.pdb

@@ -1,0 +1,15 @@
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\bin\Debug\net5.0\DF.Ecommerce.Application.deps.json
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\bin\Debug\net5.0\DF.Ecommerce.Application.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\bin\Debug\net5.0\ref\DF.Ecommerce.Application.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\bin\Debug\net5.0\DF.Ecommerce.Application.pdb
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\bin\Debug\net5.0\DF.Ecommerce.Domain.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\bin\Debug\net5.0\DF.Ecommerce.Domain.pdb
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.csproj.AssemblyReference.cache
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.AssemblyInfoInputs.cache
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.AssemblyInfo.cs
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.csproj.CoreCompileInputs.cache
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.csproj.CopyComplete
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\ref\DF.Ecommerce.Application.dll
+C:\Users\197363\Documents\Projetos\Desafio_Ecommerce\src\DF.Ecommerce.Application\obj\Debug\net5.0\DF.Ecommerce.Application.pdb
