@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Domain.Entites
 {
-    internal class Cupom : Entity
+    public class Cupom : Entity
     {
+        public string Descricao { get; set; }
+        public decimal VlCupom { get; set; }
+        public ICollection<Carrinho> Carrinhos { get; set; }
     }
 }
