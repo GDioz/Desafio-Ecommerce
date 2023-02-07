@@ -22,7 +22,7 @@ namespace DF.Ecommerce.Infrastructure.Mappins
                 .IsRequired()
                 .HasColumnType("varchar(14)");
 
-            builder.Property(x => x.Nome)
+            builder.Property(x => x.DataNascimento)
                 .IsRequired()
                 .HasColumnType("datetime");
 

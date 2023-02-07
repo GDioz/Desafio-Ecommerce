@@ -28,3 +28,6 @@ D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\obj\Debug\net5.0\D
 D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\obj\Debug\net5.0\refint\DF.Ecommerce.Infrastructure.dll
 D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\obj\Debug\net5.0\DF.Ecommerce.Infrastructure.pdb
 D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\obj\Debug\net5.0\ref\DF.Ecommerce.Infrastructure.dll
+D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\bin\Debug\net5.0\DF.Ecommerce.Infrastructure.runtimeconfig.json
+D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\bin\Debug\net5.0\DF.Ecommerce.Infrastructure.runtimeconfig.dev.json
+D:\Trabalho\Desafio_Ecommerce\src\DF.Ecommerce.Infrastructure\obj\Debug\net5.0\DF.Ecommerce.Infrastructure.genruntimeconfig.cache

@@ -8,6 +8,12 @@ namespace DF.Ecommerce.Domain.Entites
 {
     public abstract class  Entity
     {
+        protected Entity()
+        {
+            if(Id == Guid.Empty)
+                Id = Guid.NewGuid();
+
+        }
         public Guid Id { get; set; }
     }
 }
