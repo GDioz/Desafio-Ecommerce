@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\DF.Ecommerce.Domain",
+    "\\src\\DF.Ecommerce.Domain\\Interfaces",
+    "\\src\\DF.Ecommerce.Domain\\Interfaces\\Repository",
+    "\\src\\DF.Ecommerce.Infrastructure",
+    "\\src\\DF.Ecommerce.Infrastructure\\Context",
+    "\\src\\DF.Ecommerce.Infrastructure\\Mappins",
+    "\\src\\DF.Ecommerce.Infrastructure\\Repository"
   ],
-  "SelectedNode": "\\Desafio_Ecommerce.sln",
+  "SelectedNode": "\\src\\DF.Ecommerce.Infrastructure\\Repository\\BaseRepository.cs",
   "PreviewInSolutionExplorer": false
 }

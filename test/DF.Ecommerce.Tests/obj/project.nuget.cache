@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4WN8MF0ZIy1g5VwC4pZ1meS5sY61xl9pwOfVGrg+N3x5OmIIncJoP2+Eup+hwzsVsLo4Jty/JBXINhdzIdEBag==",
+  "dgSpecHash": "xB/Lb2uE+SPewCaWhbMb892R2mEque8m5fvPxtsCk/D07DFC8i5Nt392+cmAIhdBnLRVMBXXhyWMkS4ZTwELOQ==",
   "success": true,
   "projectFilePath": "D:\\Trabalho\\Desafio_Ecommerce\\test\\DF.Ecommerce.Tests\\DF.Ecommerce.Tests.csproj",
   "expectedPackageFiles": [
@@ -95,10 +95,7 @@
     "C:\\Users\\gusta\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\gusta\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
   ],
   "logs": []
 }

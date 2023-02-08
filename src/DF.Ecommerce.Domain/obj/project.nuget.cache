@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P3Qj0bhWq9Yn7WCBbJr0oQLu1SpKuJCVDmOo8P0KHliNgNq8DiGPmkOLilJcsk6j2bMH2WwCuFWx9jh5HLvArA==",
+  "dgSpecHash": "cbjolYsSOZFuoHDoB+fik7XkU9yUdx3MYeipoEeMrxC13Li6Q087INXCHjuYJwqHQx8mUNfMusGYyZNlH4W5rg==",
   "success": true,
   "projectFilePath": "D:\\Trabalho\\Desafio_Ecommerce\\src\\DF.Ecommerce.Domain\\DF.Ecommerce.Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
