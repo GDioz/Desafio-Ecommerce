@@ -15,7 +15,10 @@ namespace DF.Ecommerce.Infrastructure.Repository
     {
         protected readonly CarrinhoContext _context;
         protected readonly DbSet<TEntity> _dbset;
+        public BaseRepository(CarrinhoContext context)
+        {
 
+        }
         public virtual async Task<TEntity> Adicionar(TEntity entity)
         {
             var entidade = _dbset.Add(entity);

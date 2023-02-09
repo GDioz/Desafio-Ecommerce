@@ -1,5 +1,6 @@
 ﻿using DF.Ecommerce.Domain.Entites;
 using DF.Ecommerce.Domain.Interfaces.Repository;
+using DF.Ecommerce.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ namespace DF.Ecommerce.Infrastructure.Repository
 {
     public class ClienteRepository : BaseRepository<Cliente>, IClienteRepository
     {
+        public ClienteRepository(CarrinhoContext context) : base(context)
+        {
+
+        }
         public async Task<Cliente> AtualizarInformacoes(Cliente cliente)
         {
             var clientRef = await ObterClientePorDocumento(cliente.Cpf);
