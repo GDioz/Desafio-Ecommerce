@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DF.Ecommerce.Infrastructure.Migrations
 {
     [DbContext(typeof(CarrinhoContext))]
-    [Migration("20230207174252_ MigracaoInicial")]
-    partial class MigracaoInicial
+    [Migration("20230210182310_EcommerceDb")]
+    partial class EcommerceDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
                     b.Property<Guid>("IdCliente")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdCupom")
+                    b.Property<Guid?>("IdCupom")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("VlTotal")
@@ -142,8 +142,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
 
                     b.HasOne("DF.Ecommerce.Domain.Entites.Cupom", "Cupom")
                         .WithMany("Carrinhos")
-                        .HasForeignKey("IdCupom")
-                        .IsRequired();
+                        .HasForeignKey("IdCupom");
 
                     b.Navigation("Cliente");
 

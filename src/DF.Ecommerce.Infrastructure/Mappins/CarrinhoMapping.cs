@@ -23,7 +23,7 @@ namespace DF.Ecommerce.Infrastructure.Mappins
             builder.HasOne(x => x.Cupom)
                 .WithMany(x => x.Carrinhos)
                 .HasForeignKey(x => x.IdCupom)
-                .IsRequired();
+                .IsRequired(false);
 
 
 

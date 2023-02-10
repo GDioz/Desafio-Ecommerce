@@ -28,7 +28,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
                     b.Property<Guid>("IdCliente")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdCupom")
+                    b.Property<Guid?>("IdCupom")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("VlTotal")
@@ -140,8 +140,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
 
                     b.HasOne("DF.Ecommerce.Domain.Entites.Cupom", "Cupom")
                         .WithMany("Carrinhos")
-                        .HasForeignKey("IdCupom")
-                        .IsRequired();
+                        .HasForeignKey("IdCupom");
 
                     b.Navigation("Cliente");
 

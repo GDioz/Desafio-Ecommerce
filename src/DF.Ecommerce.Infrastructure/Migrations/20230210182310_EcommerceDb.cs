@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DF.Ecommerce.Infrastructure.Migrations
 {
-    public partial class MigracaoInicial : Migration
+    public partial class EcommerceDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,7 +57,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     VlTotal = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     IdCliente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdCupom = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    IdCupom = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
