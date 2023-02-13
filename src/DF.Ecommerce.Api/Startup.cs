@@ -52,7 +52,10 @@ namespace DF.Ecommerce.Api
 
             services.AddRazorPages();
 
-            services.AddDbContext<CarrinhoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            services.AddDbContext<CarrinhoContext>(options => {
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                options.UseSqlServer(Configuration.GetConnectionString("defaultConnection"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

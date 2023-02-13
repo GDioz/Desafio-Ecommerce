@@ -11,5 +11,6 @@ namespace DF.Ecommerce.Domain.Interfaces.Repository
     {
         Task<Cliente> ObterClientePorDocumento(string documento);
         Task<Cliente> AtualizarInformacoes(Cliente cliente);
+        Task<Cliente> ObterClientePorIdComInclude(Guid id);
     }
 }

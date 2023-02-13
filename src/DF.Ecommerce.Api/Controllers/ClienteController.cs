@@ -2,6 +2,7 @@
 using DF.Ecommerce.Domain.Interfaces.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
@@ -25,7 +26,7 @@ namespace DF.Ecommerce.Api.Controllers
             return Ok(clientes);
         }
 
-        [HttpPost]
+        [HttpPost] 
         public async Task<IActionResult> CadastrarCliente(Cliente cliente)
         {
             var addCliente = await _clienteRepository.Adicionar(cliente);
@@ -37,6 +38,20 @@ namespace DF.Ecommerce.Api.Controllers
         {
             var clientes = await _clienteRepository.ObterClientePorDocumento(cpf);
             return Ok(clientes);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> AtualizarInformacoes(Cliente cliente)
+        {
+            var clienteAtualizado = await _clienteRepository.AtualizarInformacoes(cliente);
+            return Ok(clienteAtualizado);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> RemoverCliente(Guid id)
+        {
+            await _clienteRepository.Remover(id);
+            return Ok();
         }
     }
 }

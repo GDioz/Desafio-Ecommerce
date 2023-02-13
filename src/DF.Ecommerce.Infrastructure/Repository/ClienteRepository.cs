@@ -14,11 +14,11 @@ namespace DF.Ecommerce.Infrastructure.Repository
     {
         public ClienteRepository(CarrinhoContext context) : base(context)
         {
-
+            
         }
         public async Task<Cliente> AtualizarInformacoes(Cliente cliente)
         {
-            var clientRef = await ObterClientePorDocumento(cliente.Cpf);
+            var clientRef = await ObterClientePorIdComInclude(cliente.Id);
             clientRef.Nome = cliente.Nome;
             clientRef.DataNascimento = cliente.DataNascimento;
             clientRef.Email = cliente.Email;
@@ -30,10 +30,19 @@ namespace DF.Ecommerce.Infrastructure.Repository
         public async Task<Cliente> ObterClientePorDocumento(string documento)
         {
             return await Task.FromResult(_context.Clientes
+                //.Include(x => x.Carrinho)
+                //.ThenInclude(x => x.ItensCarrinhos)
+                //.ThenInclude(x => x.Produto)
+                .FirstOrDefault(c => c.Cpf.Equals(documento)));
+        }
+
+        public async Task<Cliente> ObterClientePorIdComInclude(Guid id)
+        {
+            return await Task.FromResult(_context.Clientes
                 .Include(x => x.Carrinho)
                 .ThenInclude(x => x.ItensCarrinhos)
                 .ThenInclude(x => x.Produto)
-                .FirstOrDefault(c => c.Cpf.Equals(documento)));
+                .FirstOrDefault(c => c.Id.Equals(id)));
         }
     }
 }
