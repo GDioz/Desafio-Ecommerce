@@ -53,7 +53,6 @@ namespace DF.Ecommerce.Api
             services.AddRazorPages();
 
             services.AddDbContext<CarrinhoContext>(options => {
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 options.UseSqlServer(Configuration.GetConnectionString("defaultConnection"));
             });
         }

@@ -29,9 +29,8 @@ namespace DF.Ecommerce.Infrastructure.Repository
 
         public virtual async Task<TEntity> Atualizar(TEntity entity)
         {
-            var atualizado = _dbset.Update(entity);
             await SaveChanges();
-            return atualizado.Entity;
+            return entity;
         }
 
         public virtual async Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> expression)

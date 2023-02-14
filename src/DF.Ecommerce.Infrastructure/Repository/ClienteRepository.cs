@@ -30,18 +30,18 @@ namespace DF.Ecommerce.Infrastructure.Repository
         public async Task<Cliente> ObterClientePorDocumento(string documento)
         {
             return await Task.FromResult(_context.Clientes
-                //.Include(x => x.Carrinho)
-                //.ThenInclude(x => x.ItensCarrinhos)
-                //.ThenInclude(x => x.Produto)
+                .Include(x => x.Carrinho)
+                .ThenInclude(x => x.ItensCarrinhos)
+                .ThenInclude(x => x.Produto)
                 .FirstOrDefault(c => c.Cpf.Equals(documento)));
         }
 
         public async Task<Cliente> ObterClientePorIdComInclude(Guid id)
         {
             return await Task.FromResult(_context.Clientes
-                .Include(x => x.Carrinho)
-                .ThenInclude(x => x.ItensCarrinhos)
-                .ThenInclude(x => x.Produto)
+                //.include(x => x.carrinho)
+                //.theninclude(x => x.itenscarrinhos)
+                //.theninclude(x => x.produto)
                 .FirstOrDefault(c => c.Id.Equals(id)));
         }
     }
