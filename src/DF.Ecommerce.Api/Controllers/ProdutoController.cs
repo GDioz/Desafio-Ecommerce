@@ -32,15 +32,15 @@ namespace DF.Ecommerce.Api.Controllers
             return Ok(produto);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> RemoverProduto(Guid id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoverProduto([FromRoute]Guid id)
         {
             await _produtoRepository.Remover(id);
             return Ok();
         }
 
         [HttpPut]
-        public async Task<IActionResult> AtualizarAtualizarInformacoesDoProduto(Produto produto)
+        public async Task<IActionResult> AtualizarInformacoesDoProduto(Produto produto)
         {
             var produtoAtualizado = await _produtoRepository.AtualizarInformacoesDoProduto(produto);
             return Ok(produtoAtualizado);

@@ -47,8 +47,8 @@ namespace DF.Ecommerce.Api.Controllers
             return Ok(clienteAtualizado);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> RemoverCliente(Guid id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoverCliente([FromRoute]Guid id)
         {
             await _clienteRepository.Remover(id);
             return Ok();

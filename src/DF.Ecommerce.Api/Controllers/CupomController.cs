@@ -41,8 +41,8 @@ namespace DF.Ecommerce.Api.Controllers
             return Ok(addCupom);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> RemoverCupom(Guid id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoverCupom([FromRoute] Guid id)
         {
             await _cupomRepository.Remover(id);
             return Ok();

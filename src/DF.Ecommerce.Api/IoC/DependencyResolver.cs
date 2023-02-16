@@ -1,5 +1,9 @@
-﻿using DF.Ecommerce.Domain.Interfaces.Repository;
+﻿using DF.Ecommerce.Application;
+using DF.Ecommerce.Application.Interfaces;
+using DF.Ecommerce.Domain.Interfaces.Repository;
+using DF.Ecommerce.Domain.Interfaces.UnitOfWork;
 using DF.Ecommerce.Infrastructure.Repository;
+using DF.Ecommerce.Infrastructure.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -22,7 +26,7 @@ namespace DF.Ecommerce.Api.IoC
 
         private static void RegisterUnitOfWork(IServiceCollection services)
         {
-            //throw new NotImplementedException();
+            services.AddScoped<IUnitOfWorkCarrinho, UnitOfWorkCarrinho>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
@@ -36,7 +40,8 @@ namespace DF.Ecommerce.Api.IoC
 
         private static void RegisterAplications(IServiceCollection services)
         {
-            //throw new NotImplementedException();
+            services.AddScoped<IClienteAplication, ClienteAplication>();
         }
     }
 }
+

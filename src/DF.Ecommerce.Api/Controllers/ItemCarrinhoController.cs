@@ -30,9 +30,15 @@ namespace DF.Ecommerce.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete("/itemcarrinho")]
-        public async Task<IActionResult> RemoverItemCarrinho(Guid idProduto, Guid idCarrinho)
+        [HttpDelete("/itemcarrinho/{idProduto}/{idCarrinho}")]
+        public async Task<IActionResult> RemoverItemCarrinho([FromRoute]Guid idProduto, [FromRoute] Guid idCarrinho)
         {
+
+            if(string.IsNullOrEmpty(idCarrinho.ToString()) || string.IsNullOrEmpty(idProduto.ToString()))
+            {
+                return BadRequest("Um dos Paramertros está vazio");
+            }
+
             await _itemCarrinhoRepository.RemoverItemCarrinho(idProduto,idCarrinho);
             return Ok();
         }
