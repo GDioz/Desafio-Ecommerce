@@ -1,5 +1,6 @@
 ﻿using DF.Ecommerce.Application;
 using DF.Ecommerce.Application.Interfaces;
+using DF.Ecommerce.Domain.Entites;
 using DF.Ecommerce.Domain.Interfaces.Repository;
 using DF.Ecommerce.Domain.Interfaces.UnitOfWork;
 using DF.Ecommerce.Infrastructure.Repository;
@@ -41,6 +42,10 @@ namespace DF.Ecommerce.Api.IoC
         private static void RegisterAplications(IServiceCollection services)
         {
             services.AddScoped<IClienteAplication, ClienteAplication>();
+            services.AddScoped<ICarrinhoAplication, CarrinhoAplication>();
+            services.AddScoped<ICupomAplication, CupomAplication>();
+            services.AddScoped<IProdutoAplication, ProdutoAplication>();
+            services.AddScoped<IItemCarrinhoAplication, ItemCarrinhoAplication>();
         }
     }
 }

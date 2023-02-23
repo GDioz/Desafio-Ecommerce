@@ -23,7 +23,7 @@ namespace DF.Ecommerce.Infrastructure.Repository
         public async Task<int> AtualizarQuantidade(Guid idProduto, Guid idCarrinho, int quantidade)
         {
             var itemCarrinho = await _dbSet.FindAsync(idProduto,idCarrinho);
-            itemCarrinho.Quantidade = quantidade;
+            itemCarrinho.Quantidade += quantidade;
             _dbSet.Update(itemCarrinho);
             return await _context.SaveChangesAsync();
         }
