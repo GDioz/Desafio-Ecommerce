@@ -1,25 +1,37 @@
-﻿using DF.Ecommerce.Domain.Interfaces.Repository;
+﻿using DF.Ecommerce.Application.Interfaces;
+using DF.Ecommerce.Application.Models;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarrinhoController : ControllerBase
+    public class CarrinhoController : ApiBaseController
     {
-        private readonly ICarrinhoRepository _carrinhoRepository;
+        private readonly ICarrinhoAplication _carrinhoAplication;
 
-        public CarrinhoController(ICarrinhoRepository carrinhoRepository)
+        public CarrinhoController(ICarrinhoAplication carrinhoAplication)
         {
-            _carrinhoRepository = carrinhoRepository;
+            _carrinhoAplication = carrinhoAplication;
         }
 
         [HttpGet]
         public async Task<IActionResult> ObterCarrinho (string cpf)
         {
-            var carrinho = await _carrinhoRepository.ObterCarrinho(cpf);
-            return Ok(carrinho);
+            var result = await _carrinhoAplication.ObterCarrinho(cpf);
+
+            if (result.Invalid)
+            {
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                return BadRequest(new ErrorModel(result.Notifications));
+            }
+
+            return Ok(result.Object);
         }
     }
 }

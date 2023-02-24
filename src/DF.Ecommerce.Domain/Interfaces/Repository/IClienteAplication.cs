@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Domain.Interfaces.Repository
 {
-    public interface IClienteRepository : IBaseRepository<Cliente>
+    public interface IClienteAplication : IBaseRepository<Cliente>
     {
         Task<Cliente> ObterClientePorDocumento(string documento);
         Task<Cliente> AtualizarInformacoes(Cliente cliente);

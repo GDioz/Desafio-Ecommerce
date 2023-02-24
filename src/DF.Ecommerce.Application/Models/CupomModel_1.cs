@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Application.Models
 {
-    public class ProdutoModel
+    public class CupomModel
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }

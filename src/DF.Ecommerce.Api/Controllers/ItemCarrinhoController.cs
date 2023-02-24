@@ -1,36 +1,78 @@
-﻿using DF.Ecommerce.Domain.Interfaces.Repository;
+﻿using DF.Ecommerce.Application.Models;
+using DF.Ecommerce.Application.Results;
+using DF.Ecommerce.Domain.Interfaces.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemCarrinhoController : ControllerBase
+    public class ItemCarrinhoController : ApiBaseController
     {
-        private readonly IItemCarrinhoRepository _itemCarrinhoRepository;
+        private readonly IItemCarrinhoAplication _itemCarrinhoAplication;
 
-        public ItemCarrinhoController(IItemCarrinhoRepository itemCarrinhoRepository)
+        public ItemCarrinhoController(IItemCarrinhoAplication itemCarrinhoAplication)
         {
-            _itemCarrinhoRepository = itemCarrinhoRepository;
+            _itemCarrinhoAplication = itemCarrinhoAplication;
         }
 
+        /// <summary>
+        /// Atualizar Quantidade 
+        /// </summary>
+        /// <returns>
+        /// Retorna a Quantidade Atualizada
+        /// </returns>
         [HttpPut]
+        [ProducesResponseType(typeof(ItemCarrinhoModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> AtualizarQuantidade(Guid idProduto, Guid idCarrinho, int quantidade)
         {
-            var quantidadeAtualizada = await _itemCarrinhoRepository.AtualizarQuantidade(idProduto,idCarrinho, quantidade);
-            return Ok(quantidadeAtualizada);
+            var result =  await _itemCarrinhoAplication.AtualizarQuantidade(idProduto,idCarrinho, quantidade);
+
+            if (result > 0)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
         }
 
+        /// <summary>
+        /// Limpar Carrinho
+        /// </summary>
+        /// <returns>
+        /// Confirmação da limpeza do Carrinho
+        /// </returns>
         [HttpDelete]
+        [ProducesResponseType(typeof(ItemCarrinhoModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> LimparCarrinho(Guid idCarrinho)
         {
-            await _itemCarrinhoRepository.LimparCarrinho(idCarrinho);
-            return Ok();
+            var result = await _itemCarrinhoAplication.LimparCarrinho(idCarrinho);
+            if (result > 0)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+
         }
 
+        /// <summary>
+        /// Remover Item do Carrinho
+        /// </summary>
+        /// <returns>
+        /// Retorna o Item Excluido
+        /// </returns>
         [HttpDelete("/itemcarrinho/{idProduto}/{idCarrinho}")]
+        [ProducesResponseType(typeof(ItemCarrinhoModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> RemoverItemCarrinho([FromRoute]Guid idProduto, [FromRoute] Guid idCarrinho)
         {
 
@@ -39,8 +81,13 @@ namespace DF.Ecommerce.Api.Controllers
                 return BadRequest("Um dos Paramertros está vazio");
             }
 
-            await _itemCarrinhoRepository.RemoverItemCarrinho(idProduto,idCarrinho);
-            return Ok();
+            var result = await _itemCarrinhoAplication.RemoverItemCarrinho(idProduto, idCarrinho);
+            if (result > 0)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
         }
     }
 }

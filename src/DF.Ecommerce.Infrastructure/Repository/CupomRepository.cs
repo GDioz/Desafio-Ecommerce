@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Infrastructure.Repository
 {
-    public class CupomRepository : BaseRepository<Cupom>, ICupomRepository
+    public class CupomRepository : BaseRepository<Cupom>, ICupomAplication
     {
         public CupomRepository(CarrinhoContext context) : base(context)
         {

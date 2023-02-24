@@ -14,21 +14,21 @@ namespace DF.Ecommerce.Infrastructure.UnitOfWork
     {
         private readonly CarrinhoContext _carrinhoContext;
 
-        private ICarrinhoRepository _carrinhoRepository;
+        private ICarrinhoAplication _carrinhoRepository;
         private IProdutoRepository _produtoRepository;
-        private IItemCarrinhoRepository _itemCarrinhoRepository;
-        private ICupomRepository _cupomRepository;
-        private IClienteRepository _clienteRepository;
+        private IItemCarrinhoAplication _itemCarrinhoRepository;
+        private ICupomAplication _cupomRepository;
+        private IClienteAplication _clienteRepository;
 
         public UnitOfWorkCarrinho(CarrinhoContext context) : base(context) => _carrinhoContext = context;
-        public IClienteRepository ClienteRepository => _clienteRepository ??= new ClienteRepository(_carrinhoContext);
+        public IClienteAplication ClienteRepository => _clienteRepository ??= new ClienteRepository(_carrinhoContext);
 
-        public ICarrinhoRepository CarrinhoRepository => _carrinhoRepository ??= new CarrinhoRepository(_carrinhoContext);
+        public ICarrinhoAplication CarrinhoRepository => _carrinhoRepository ??= new CarrinhoRepository(_carrinhoContext);
 
         public IProdutoRepository ProdutoRepository => _produtoRepository ??= new ProdutoRepository(_carrinhoContext);
 
-        public IItemCarrinhoRepository ItemCarrinhoRepository => _itemCarrinhoRepository ??= new ItemCarrinhoRepository(_carrinhoContext);
+        public IItemCarrinhoAplication ItemCarrinhoRepository => _itemCarrinhoRepository ??= new ItemCarrinhoRepository(_carrinhoContext);
 
-        public ICupomRepository CupomRepository => _cupomRepository ??= new CupomRepository(_carrinhoContext);
+        public ICupomAplication CupomRepository => _cupomRepository ??= new CupomRepository(_carrinhoContext);
     }
 }

@@ -23,30 +23,30 @@ namespace DF.Ecommerce.Application
             _produtoRepository = produtoRepository;
         }
 
-        public async Task<Result<ProdutoModel>> ObterProdutoPeloId(Guid id)
+        public async Task<Result<CupomModel>> ObterProdutoPeloId(Guid id)
         {
             var produto = await _produtoRepository.ObterPorId(id);
-            return Result<ProdutoModel>.Ok(_mapper.Map<ProdutoModel>(produto));
+            return Result<CupomModel>.Ok(_mapper.Map<CupomModel>(produto));
         }
 
-        public async Task<Result<List<ProdutoModel>>> ObterProdutos()
+        public async Task<Result<List<CupomModel>>> ObterProdutos()
         {
             var produtos = await _produtoRepository.ObterTodos();
-            return Result<List<ProdutoModel>>.Ok(_mapper.Map<List<ProdutoModel>>(produtos));
+            return Result<List<CupomModel>>.Ok(_mapper.Map<List<CupomModel>>(produtos));
         }
 
-        public async Task<Result<ProdutoModel>> AtualizarInformacoes(ProdutoModel produtoModel)
+        public async Task<Result<CupomModel>> AtualizarInformacoes(CupomModel produtoModel)
         {
             var atualizado = _mapper.Map<Produto>(produtoModel);
             var produtoAtualizado = await _produtoRepository.Atualizar(atualizado);
-            return Result<ProdutoModel>.Ok(_mapper.Map<ProdutoModel>(produtoAtualizado));
+            return Result<CupomModel>.Ok(_mapper.Map<CupomModel>(produtoAtualizado));
         }
 
-        public async Task<Result<ProdutoModel>> InserirProduto(ProdutoModel produtoModel)
+        public async Task<Result<CupomModel>> InserirProduto(CupomModel produtoModel)
         {
             var addProduto = _mapper.Map<Produto>(produtoModel);
             var clienteAdicionado = await _produtoRepository.Adicionar(addProduto);
-            return Result<ProdutoModel>.Ok(_mapper.Map<ProdutoModel>(clienteAdicionado));
+            return Result<CupomModel>.Ok(_mapper.Map<CupomModel>(clienteAdicionado));
         }
 
         public async Task<Result<string>> RemoverProduto(Guid id)

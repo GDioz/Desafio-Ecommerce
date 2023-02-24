@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Application
 {
-    public class ClienteAplication : IClienteAplication
+    public class ClienteAplication : Interfaces.IClienteAplication
     {
         private readonly IMapper _mapper;
-        private readonly IClienteRepository _clienteRepository;
+        private readonly Domain.Interfaces.Repository.IClienteAplication _clienteRepository;
 
 
-        public ClienteAplication(IMapper mapper, IClienteRepository clienteRepository)
+        public ClienteAplication(IMapper mapper, Domain.Interfaces.Repository.IClienteAplication clienteRepository)
         {
             _mapper = mapper;
             _clienteRepository = clienteRepository;

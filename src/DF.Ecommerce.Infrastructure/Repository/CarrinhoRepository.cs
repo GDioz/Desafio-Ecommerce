@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Infrastructure.Repository
 {
-    public class CarrinhoRepository : BaseRepository<Carrinho>, ICarrinhoRepository
+    public class CarrinhoRepository : BaseRepository<Carrinho>, ICarrinhoAplication
     {
         public CarrinhoRepository(CarrinhoContext context) : base(context)
         {

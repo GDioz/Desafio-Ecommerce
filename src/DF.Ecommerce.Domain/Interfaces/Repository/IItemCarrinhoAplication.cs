@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Domain.Interfaces.Repository
 {
-    public interface IItemCarrinhoRepository
+    public interface IItemCarrinhoAplication
     {
         Task<int> AtualizarQuantidade(Guid idProduto, Guid idCarrinho, int quantidade);
         Task<int> RemoverItemCarrinho(Guid idProduto, Guid idCarrinho);

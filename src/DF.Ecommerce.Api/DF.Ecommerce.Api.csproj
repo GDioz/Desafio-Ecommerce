@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>obj\Debug\net5.0\DF.Ecommerce.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

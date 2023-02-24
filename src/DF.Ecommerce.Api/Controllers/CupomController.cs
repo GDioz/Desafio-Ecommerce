@@ -1,51 +1,130 @@
-﻿using DF.Ecommerce.Domain.Entites;
-using DF.Ecommerce.Domain.Interfaces.Repository;
+﻿using DF.Ecommerce.Application.Models;
+using DF.Ecommerce.Application.Interfaces;
+using DF.Ecommerce.Domain.Entites;
 using DF.Ecommerce.Infrastructure.Context;
 using DF.Ecommerce.Infrastructure.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace DF.Ecommerce.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CupomController : ControllerBase
+    public class CupomController : ApiBaseController
     {
-        private readonly ICupomRepository _cupomRepository;
+        private readonly ICupomAplication _cupomAplication;
 
-        public CupomController(ICupomRepository cupomRepository)
+        public CupomController(ICupomAplication cupomAplication)
         {
-            _cupomRepository = cupomRepository;
+            _cupomAplication = cupomAplication;
 
         }
 
+        /// <summary>
+        /// Atualizar Informações do Produto
+        /// </summary>
+        /// <returns>Atualiza as Informações do Produto</returns>
         [HttpPut]
-        public async Task<IActionResult> AtualizarInformacoesDoCumpom(Cupom cupom)
+        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> AtualizarInformacoesDoCumpom(CupomModel cupom)
         {
-            var clientes = await _cupomRepository.AtualizarInformacoesDoCumpom(cupom);
-            return Ok(clientes);
+            var result = await _cupomAplication.AtualizarInformacoes(cupom);
+
+            if (result.Invalid)
+            {
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                return BadRequest(new ErrorModel(result.Notifications));
+            }
+
+            return Ok(result.Object);
         }
 
+        /// <summary>
+        /// Obter Cupons
+        /// </summary>
+        /// <returns>
+        /// Retorna uma lista de Cupons
+        /// </returns>
         [HttpGet]
-        public async Task<IActionResult> ObterClientes()
+        [ProducesResponseType(typeof(List<CupomModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> ObterCupons()
         {
-            var cupons = await _cupomRepository.ObterTodos();
-            return Ok(cupons);
+            var result = await _cupomAplication.ObterCupons();
+
+            if (result.Invalid)
+            {
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                return BadRequest(new ErrorModel(result.Notifications));
+            }
+
+            return Ok(result.Object);
         }
 
+        /// <summary>
+        /// Cadastrar Cupom
+        /// </summary>
+        /// <returns>
+        /// Cadastra o Cupom no Banco de Dados
+        /// </returns>
         [HttpPost]
-        public async Task<IActionResult> CadastrarCupom(Cupom cupom)
+        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> CadastrarCupom(CupomModel cupom)
         {
-            var addCupom = await _cupomRepository.Adicionar(cupom);
-            return Ok(addCupom);
+            var result = await _cupomAplication.InserirCupom(cupom);
+
+            if (result.Invalid)
+            {
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                return BadRequest(new ErrorModel(result.Notifications));
+            }
+
+            return Ok(result.Object);
+
         }
 
+        /// <summary>
+        /// Remover Cupom
+        /// </summary>
+        /// <returns>
+        /// Cadastra o Cupom no Banco de Dados
+        /// </returns>
         [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> RemoverCupom([FromRoute] Guid id)
         {
-            await _cupomRepository.Remover(id);
-            return Ok();
+            var result = await _cupomAplication.RemoverCupom(id);
+
+            if (result.Invalid)
+            {
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                return BadRequest(new ErrorModel(result.Notifications));
+            }
+
+            return Ok(result.Object);
+
         }
     }
 }

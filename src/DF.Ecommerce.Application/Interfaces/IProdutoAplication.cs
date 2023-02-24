@@ -10,11 +10,11 @@ namespace DF.Ecommerce.Application.Interfaces
 {
     public interface IProdutoAplication
     {
-        Task<Result<List<ProdutoModel>>> ObterProdutos();
-        Task<Result<ProdutoModel>> ObterProdutoPeloId(Guid id);
-        Task<Result<ProdutoModel>> InserirProduto(ProdutoModel produtoModel);
+        Task<Result<List<CupomModel>>> ObterProdutos();
+        Task<Result<CupomModel>> ObterProdutoPeloId(Guid id);
+        Task<Result<CupomModel>> InserirProduto(CupomModel produtoModel);
         Task<Result<string>> RemoverProduto(Guid id);
-        Task<Result<ProdutoModel>> AtualizarInformacoes(ProdutoModel produtoModel);
+        Task<Result<CupomModel>> AtualizarInformacoes(CupomModel produtoModel);
 
     }
 }

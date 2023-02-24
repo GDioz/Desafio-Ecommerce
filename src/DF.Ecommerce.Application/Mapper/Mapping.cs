@@ -19,7 +19,7 @@ namespace DF.Ecommerce.Application.Mapper
             CreateMap<CupomModel, Cupom>()
                 .ForMember(dest => dest.Id,opt => opt.MapFrom(src => src.Codigo))
                 .ReverseMap();
-            CreateMap<ProdutoModel, Produto>()
+            CreateMap<CupomModel, Produto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Codigo))
                 .ReverseMap();
         }
