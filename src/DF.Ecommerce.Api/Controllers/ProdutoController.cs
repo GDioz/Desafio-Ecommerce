@@ -32,7 +32,7 @@ namespace DF.Ecommerce.Api.Controllers
         /// Retorna uma lista de Produtos
         /// </returns>
         [HttpGet]
-        [ProducesResponseType(typeof(List<CupomModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<ProdutoModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> ObterProdutos()
         {
@@ -55,7 +55,7 @@ namespace DF.Ecommerce.Api.Controllers
         /// <param name="codigo">Código do produto</param>
         /// <returns>Consulta informações de um produto</returns>
         [HttpGet("{codigo}")]
-        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProdutoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> ObterProdutoPorId(Guid codigo)
@@ -82,10 +82,10 @@ namespace DF.Ecommerce.Api.Controllers
         /// </summary>
         /// <returns>Cadastra o Produto no Banco de Dados</returns>
         [HttpPost]
-        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProdutoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> CadastrarProduto(CupomModel produto)
+        public async Task<IActionResult> CadastrarProduto(ProdutoModel produto)
         {
             var result = await _produtoAplication.InserirProduto(produto);
 
@@ -110,7 +110,7 @@ namespace DF.Ecommerce.Api.Controllers
         /// /// <param name="id">Código do produto</param>
         /// <returns>Confirmação da Remoção do Produto</returns>
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProdutoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
 
@@ -138,10 +138,10 @@ namespace DF.Ecommerce.Api.Controllers
         /// </summary>
         /// <returns>Atualiza as Informações do Produto</returns>
         [HttpPut]
-        [ProducesResponseType(typeof(CupomModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProdutoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> AtualizarInformacoesDoProduto(CupomModel produto)
+        public async Task<IActionResult> AtualizarInformacoesDoProduto(ProdutoModel produto)
         {
             var result = await _produtoAplication.AtualizarInformacoes(produto);
 

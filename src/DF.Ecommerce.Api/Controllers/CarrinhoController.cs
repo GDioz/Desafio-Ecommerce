@@ -1,5 +1,6 @@
 ﻿using DF.Ecommerce.Application.Interfaces;
 using DF.Ecommerce.Application.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using System.Threading.Tasks;
@@ -17,7 +18,16 @@ namespace DF.Ecommerce.Api.Controllers
             _carrinhoAplication = carrinhoAplication;
         }
 
+        /// <summary>
+        /// Obter Carrinho
+        /// </summary>
+        /// <returns>
+        /// Retorna o Carrinho
+        /// </returns>
         [HttpGet]
+        [ProducesResponseType(typeof(CarrinhoModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> ObterCarrinho (string cpf)
         {
             var result = await _carrinhoAplication.ObterCarrinho(cpf);
