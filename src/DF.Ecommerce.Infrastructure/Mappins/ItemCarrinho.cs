@@ -24,7 +24,7 @@ namespace DF.Ecommerce.Infrastructure.Mappins
                 .HasForeignKey(x => x.IdProduto);
 
             builder.HasOne(x => x.Carrinho)
-                .WithMany(x => x.ItensCarrinhos)
+                .WithMany(x => x.ItemCarrinhos)
                 .HasForeignKey(x => x.IdCarrinho);
 
             builder.ToTable("tb_ItemCarrinho");

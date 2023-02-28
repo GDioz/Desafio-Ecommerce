@@ -38,7 +38,7 @@ namespace DF.Ecommerce.Application
         public async Task<Result<ProdutoModel>> AtualizarInformacoes(ProdutoModel produtoModel)
         {
             var atualizado = _mapper.Map<Produto>(produtoModel);
-            var produtoAtualizado = await _produtoRepository.Atualizar(atualizado);
+            var produtoAtualizado = await _produtoRepository.AtualizarInformacoesDoProduto(atualizado);
             return Result<ProdutoModel>.Ok(_mapper.Map<ProdutoModel>(produtoAtualizado));
         }
 

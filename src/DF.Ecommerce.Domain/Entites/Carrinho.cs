@@ -9,7 +9,7 @@ namespace DF.Ecommerce.Domain.Entites
     public class Carrinho : Entity 
     {
         public decimal VlTotal { get; set; }
-        public ICollection<ItemCarrinho> ItensCarrinhos { get; set; }
+        public ICollection<ItemCarrinho> ItemCarrinhos { get; set; }
         public Guid IdCliente { get; set; }
         public Guid? IdCupom { get; set; }
 
@@ -18,8 +18,8 @@ namespace DF.Ecommerce.Domain.Entites
 
         public Carrinho()
         {
-            if(ItensCarrinhos == null || !ItensCarrinhos.Any()) 
-                ItensCarrinhos = new List<ItemCarrinho>();
+            if(ItemCarrinhos == null || !ItemCarrinhos.Any()) 
+                ItemCarrinhos = new List<ItemCarrinho>();
         }
     }
 }

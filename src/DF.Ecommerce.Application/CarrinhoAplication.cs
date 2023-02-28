@@ -74,7 +74,7 @@ namespace DF.Ecommerce.Application
             var cliente = await _unitOfWorkCarrinho.ClienteRepository.ObterClientePorDocumento(documento);
             if(cliente != null)
             {
-                var itensDic = cliente.Carrinho.ItensCarrinhos.ToDictionary( x => x.IdProduto);
+                var itensDic = cliente.Carrinho.ItemCarrinhos.ToDictionary( x => x.IdProduto);
                 if(itensDic.ContainsKey(idProduto))
                 {
                     var item = itensDic[idProduto];
@@ -90,7 +90,7 @@ namespace DF.Ecommerce.Application
                         Quantidade = 1,
                         Produto = produto
                     };
-                    cliente.Carrinho.ItensCarrinhos.Add(itemCarrinho);
+                    cliente.Carrinho.ItemCarrinhos.Add(itemCarrinho);
                 }
                 int result = RecalcularValorTotal(cliente);
 
@@ -162,9 +162,9 @@ namespace DF.Ecommerce.Application
         private int RecalcularValorTotal(Cliente cliente)
         {
             if(cliente.Carrinho.Cupom != null)
-                cliente.Carrinho.VlTotal = (cliente.Carrinho.ItensCarrinhos.Sum(x => x.Produto.Preco * x.Quantidade)) - cliente.Carrinho.Cupom.VlCupom;
+                cliente.Carrinho.VlTotal = (cliente.Carrinho.ItemCarrinhos.Sum(x => x.Produto.Preco * x.Quantidade)) - cliente.Carrinho.Cupom.VlCupom;
             else
-                cliente.Carrinho.VlTotal = (cliente.Carrinho.ItensCarrinhos.Sum(x => x.Produto.Preco * x.Quantidade));
+                cliente.Carrinho.VlTotal = (cliente.Carrinho.ItemCarrinhos.Sum(x => x.Produto.Preco * x.Quantidade));
 
             return _unitOfWorkCarrinho.Save();
         }

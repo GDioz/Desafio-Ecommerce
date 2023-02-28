@@ -44,7 +44,7 @@ namespace DF.Ecommerce.Api.IoC
             services.AddScoped<Application.Interfaces.IClienteAplication, ClienteAplication>();
             services.AddScoped<Application.Interfaces.ICarrinhoAplication, CarrinhoAplication>();
             services.AddScoped<Application.Interfaces.ICupomAplication, CupomAplication>();
-            services.AddScoped<IProdutoAplication, ProdutoAplication>();
+            services.AddScoped<Application.Interfaces.IProdutoAplication, ProdutoAplication>();
             services.AddScoped<Application.Interfaces.IItemCarrinhoAplication, ItemCarrinhoAplication>();
         }
     }

@@ -3,6 +3,7 @@ using DF.Ecommerce.Application.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using System;
 using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Api.Controllers
@@ -31,6 +32,23 @@ namespace DF.Ecommerce.Api.Controllers
         public async Task<IActionResult> ObterCarrinho (string cpf)
         {
             var result = await _carrinhoAplication.ObterCarrinho(cpf);
+
+            if (result.Invalid)
+            {
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                return BadRequest(new ErrorModel(result.Notifications));
+            }
+
+            return Ok(result.Object);
+        }
+
+        [HttpPost("adicionar/item")]
+        public async Task<IActionResult> AdicionarItemCarrinho(Guid codigoProduto, string cpf)
+        {
+            var result = await _carrinhoAplication.AdicionarItem(codigoProduto, cpf);
 
             if (result.Invalid)
             {

@@ -21,7 +21,7 @@ namespace DF.Ecommerce.Infrastructure.Repository
         {
             return await Task.FromResult(_context.Carrinhos
                 .Include(x => x.Cliente)
-                .Include(x => x.ItensCarrinhos)
+                .Include(x => x.ItemCarrinhos)
                 .ThenInclude(x => x.Produto)
                 .FirstOrDefault(c => c.Cliente.Cpf.Equals(documento)));
         }

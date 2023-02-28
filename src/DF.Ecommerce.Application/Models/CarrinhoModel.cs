@@ -10,7 +10,7 @@ namespace DF.Ecommerce.Application.Models
     public class CarrinhoModel
     {
         public decimal VlTotal { get; set; }
-        public List<ItemCarrinhoModel> ItensCarrinhos { get; set; }
+        public List<ItemCarrinhoModel> ItemCarrinhos { get; set; }
         public Guid IdCliente { get; set; }
     }
 }
