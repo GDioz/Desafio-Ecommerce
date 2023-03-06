@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Application
 {
-    public class CupomAplication : Interfaces.ICupomAplication
+    public class CupomAplication : ICupomAplication
     {
 
         private readonly IMapper _mapper;
-        private readonly Domain.Interfaces.Repository.ICupomAplication _cupomRepository;
+        private readonly ICupomRepository _cupomRepository;
 
 
-        public CupomAplication(IMapper mapper, Domain.Interfaces.Repository.ICupomAplication cupomRepository)
+        public CupomAplication(IMapper mapper, ICupomRepository cupomRepository)
         {
             _mapper = mapper;
             _cupomRepository = cupomRepository;

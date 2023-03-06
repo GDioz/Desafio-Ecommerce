@@ -1,10 +1,13 @@
 using DF.Ecommerce.Api.Assemblies;
+using DF.Ecommerce.Api.Config;
 using DF.Ecommerce.Api.Filters;
 using DF.Ecommerce.Api.IoC;
 using DF.Ecommerce.Api.Logging;
 using DF.Ecommerce.Infrastructure.Context;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,6 +52,11 @@ namespace DF.Ecommerce.Api
                 options.Filters.Add(new DefaultExceptionFilterAttribute());
             });
 
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             services.AddAutoMapper(AssemblyReflection.GetCurrentAssemblies());
 
             services.AddLoggingSerilog();
@@ -60,6 +68,9 @@ namespace DF.Ecommerce.Api
             services.AddDbContext<CarrinhoContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("defaultConnection"));
             });
+
+            services.AddAuthentication("BasicAuthentication")
+            .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

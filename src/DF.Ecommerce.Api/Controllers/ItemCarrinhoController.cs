@@ -15,9 +15,9 @@ namespace DF.Ecommerce.Api.Controllers
     [ApiController]
     public class ItemCarrinhoController : ApiBaseController
     {
-        private readonly IItemCarrinhoAplication _itemCarrinhoAplication;
+        private readonly IItemCarrinhoRepository _itemCarrinhoAplication;
 
-        public ItemCarrinhoController(IItemCarrinhoAplication itemCarrinhoAplication)
+        public ItemCarrinhoController(IItemCarrinhoRepository itemCarrinhoAplication)
         {
             _itemCarrinhoAplication = itemCarrinhoAplication;
         }

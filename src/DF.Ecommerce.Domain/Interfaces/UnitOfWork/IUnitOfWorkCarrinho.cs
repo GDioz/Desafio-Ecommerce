@@ -9,10 +9,10 @@ namespace DF.Ecommerce.Domain.Interfaces.UnitOfWork
 {
     public interface IUnitOfWorkCarrinho : IUnitOfWorkBase
     {
-        ICarrinhoAplication CarrinhoRepository { get; }
+        ICarrinhoRepository CarrinhoRepository { get; }
         IProdutoRepository ProdutoRepository { get; }
-        IItemCarrinhoAplication ItemCarrinhoRepository { get; }
-        ICupomAplication CupomRepository { get; }  
-        IClienteAplication  ClienteRepository { get; }
+        IItemCarrinhoRepository ItemCarrinhoRepository { get; }
+        ICupomRepository CupomRepository { get; }  
+        IClienteRepository  ClienteRepository { get; }
     }
 }

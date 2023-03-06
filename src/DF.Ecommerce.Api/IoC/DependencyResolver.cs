@@ -32,20 +32,21 @@ namespace DF.Ecommerce.Api.IoC
 
         private static void RegisterRepositories(IServiceCollection services)
         {
-            services.AddScoped<Domain.Interfaces.Repository.IClienteAplication, ClienteRepository>();
-            services.AddScoped<Domain.Interfaces.Repository.ICupomAplication, CupomRepository>();
-            services.AddScoped<Domain.Interfaces.Repository.ICarrinhoAplication, CarrinhoRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<ICupomRepository, CupomRepository>();
+            services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            services.AddScoped<Domain.Interfaces.Repository.IItemCarrinhoAplication, ItemCarrinhoRepository>();
+            services.AddScoped<IItemCarrinhoRepository, ItemCarrinhoRepository>();
         }
 
         private static void RegisterAplications(IServiceCollection services)
         {
-            services.AddScoped<Application.Interfaces.IClienteAplication, ClienteAplication>();
-            services.AddScoped<Application.Interfaces.ICarrinhoAplication, CarrinhoAplication>();
-            services.AddScoped<Application.Interfaces.ICupomAplication, CupomAplication>();
-            services.AddScoped<Application.Interfaces.IProdutoAplication, ProdutoAplication>();
-            services.AddScoped<Application.Interfaces.IItemCarrinhoAplication, ItemCarrinhoAplication>();
+            services.AddScoped<IClienteAplication, ClienteAplication>();
+            services.AddScoped<ICarrinhoAplication, CarrinhoAplication>(); 
+            services.AddScoped<ICupomAplication, CupomAplication>();
+            services.AddScoped<IProdutoAplication, ProdutoAplication>();
+            services.AddScoped<IItemCarrinhoAplication, ItemCarrinhoAplication>();
+            services.AddScoped<IUserAplication, UserAplication>();
         }
     }
 }

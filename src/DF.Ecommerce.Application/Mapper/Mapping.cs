@@ -17,7 +17,6 @@ namespace DF.Ecommerce.Application.Mapper
             CreateMap<CarrinhoModel, Carrinho>()
                 .ForMember(dest => (List<ItemCarrinho>)dest.ItemCarrinhos, opt => opt.MapFrom(src => src.ItemCarrinhos))
                 .ReverseMap();
-            CreateMap<ItemCarrinhoModel, ItemCarrinho>().ReverseMap();
             CreateMap<CupomModel, Cupom>()
                 .ForMember(dest => dest.Id,opt => opt.MapFrom(src => src.Codigo))
                 .ReverseMap();
@@ -25,5 +24,6 @@ namespace DF.Ecommerce.Application.Mapper
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Codigo))
                 .ReverseMap();
         }
+
     }
 }

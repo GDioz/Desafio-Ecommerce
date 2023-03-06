@@ -13,9 +13,9 @@ namespace DF.Ecommerce.Application
     public class ItemCarrinhoAplication : Interfaces.IItemCarrinhoAplication
     {
         private readonly IMapper _mapper;
-        private readonly Domain.Interfaces.Repository.IItemCarrinhoAplication _itemCarrinhoRepository;
+        private readonly Domain.Interfaces.Repository.IItemCarrinhoRepository _itemCarrinhoRepository;
 
-        public ItemCarrinhoAplication(IMapper mapper, Domain.Interfaces.Repository.IItemCarrinhoAplication itemCarrinhoRepository)
+        public ItemCarrinhoAplication(IMapper mapper, Domain.Interfaces.Repository.IItemCarrinhoRepository itemCarrinhoRepository)
         {
             _mapper = mapper;
             _itemCarrinhoRepository = itemCarrinhoRepository;

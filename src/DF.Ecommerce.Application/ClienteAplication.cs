@@ -15,10 +15,10 @@ namespace DF.Ecommerce.Application
     public class ClienteAplication : Interfaces.IClienteAplication
     {
         private readonly IMapper _mapper;
-        private readonly Domain.Interfaces.Repository.IClienteAplication _clienteRepository;
+        private readonly Domain.Interfaces.Repository.IClienteRepository _clienteRepository;
 
 
-        public ClienteAplication(IMapper mapper, Domain.Interfaces.Repository.IClienteAplication clienteRepository)
+        public ClienteAplication(IMapper mapper, Domain.Interfaces.Repository.IClienteRepository clienteRepository)
         {
             _mapper = mapper;
             _clienteRepository = clienteRepository;

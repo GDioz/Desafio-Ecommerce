@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Infrastructure.Repository
 {
-    public class ItemCarrinhoRepository : IItemCarrinhoAplication
+    public class ItemCarrinhoRepository : IItemCarrinhoRepository
     {
         private readonly CarrinhoContext _context;
         private readonly DbSet<ItemCarrinho> _dbSet;

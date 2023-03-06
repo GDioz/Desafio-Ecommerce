@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Domain.Interfaces.Repository
 {
-    public interface ICarrinhoAplication : IBaseRepository<Carrinho>
+    public interface ICarrinhoRepository : IBaseRepository<Carrinho>
     {
         Task<Carrinho> ObterCarrinho(string documento);
     }

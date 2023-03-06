@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Domain.Interfaces.Repository
 {
-    public interface ICupomAplication : IBaseRepository<Cupom>
+    public interface ICupomRepository : IBaseRepository<Cupom>
     {
         Task<Cupom> AtualizarInformacoesDoCumpom(Cupom cupom);
     }
