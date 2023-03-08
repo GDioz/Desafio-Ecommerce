@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace DF.Ecommerce.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class CupomController : ApiBaseController
     {

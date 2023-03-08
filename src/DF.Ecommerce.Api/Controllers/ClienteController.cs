@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DF.Ecommerce.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [Authorize]
     public class ClienteController : ApiBaseController
