@@ -9,7 +9,7 @@ namespace DF.Ecommerce.Domain.Entites
     public class Carrinho : Entity 
     {
         public decimal VlTotal { get; set; }
-        public ICollection<ItemCarrinho> ItemCarrinhos { get; set; }
+        public List<ItemCarrinho> ItemCarrinhos { get; set; }
         public Guid IdCliente { get; set; }
         public Guid? IdCupom { get; set; }
         public Cliente Cliente { get; set; }

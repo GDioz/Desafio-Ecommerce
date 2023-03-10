@@ -1,5 +1,6 @@
 ﻿using DF.Ecommerce.Application.Interfaces;
 using DF.Ecommerce.Application.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -8,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Api.Controllers
 {
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CarrinhoController : ApiBaseController
     {
         private readonly ICarrinhoAplication _carrinhoAplication;

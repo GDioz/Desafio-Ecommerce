@@ -14,14 +14,17 @@ namespace DF.Ecommerce.Application.Mapper
         public Mapping()
         {
             CreateMap<ClienteModel, Cliente>().ReverseMap();
-            CreateMap<CarrinhoModel, Carrinho>()
-                .ForMember(dest => (List<ItemCarrinho>)dest.ItemCarrinhos, opt => opt.MapFrom(src => src.ItemCarrinhos))
-                .ReverseMap();
             CreateMap<CupomModel, Cupom>()
                 .ForMember(dest => dest.Id,opt => opt.MapFrom(src => src.Codigo))
                 .ReverseMap();
             CreateMap<ProdutoModel, Produto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Codigo))
+                .ReverseMap();
+            CreateMap<ItemCarrinhoModel, ItemCarrinho>()
+                .ReverseMap();
+            CreateMap<List<ItemCarrinhoModel>, List<ItemCarrinho>>()
+                .ReverseMap();
+            CreateMap<CarrinhoModel, Carrinho>()
                 .ReverseMap();
         }
 
