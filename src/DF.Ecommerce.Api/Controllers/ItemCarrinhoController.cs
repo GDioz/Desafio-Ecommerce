@@ -1,4 +1,6 @@
-﻿using DF.Ecommerce.Application.Models;
+﻿using DF.Ecommerce.Application;
+using DF.Ecommerce.Application.Interfaces;
+using DF.Ecommerce.Application.Models;
 using DF.Ecommerce.Application.Results;
 using DF.Ecommerce.Domain.Interfaces.Repository;
 using Microsoft.AspNetCore.Http;
@@ -15,9 +17,9 @@ namespace DF.Ecommerce.Api.Controllers
     [ApiController]
     public class ItemCarrinhoController : ApiBaseController
     {
-        private readonly IItemCarrinhoRepository _itemCarrinhoAplication;
+        private readonly IItemCarrinhoAplication _itemCarrinhoAplication;
 
-        public ItemCarrinhoController(IItemCarrinhoRepository itemCarrinhoAplication)
+        public ItemCarrinhoController(IItemCarrinhoAplication itemCarrinhoAplication)
         {
             _itemCarrinhoAplication = itemCarrinhoAplication;
         }
@@ -31,16 +33,23 @@ namespace DF.Ecommerce.Api.Controllers
         [HttpPut]
         [ProducesResponseType(typeof(ItemCarrinhoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> AtualizarQuantidade(Guid idProduto, Guid idCarrinho, int quantidade)
+        public async Task<IActionResult> AtualizarQuantidade(Guid idProduto, string cpf, int quantidade)
         {
-            var result =  await _itemCarrinhoAplication.AtualizarQuantidade(idProduto,idCarrinho, quantidade);
+            var result = await _itemCarrinhoAplication.AtualizarQuantidade(idProduto, cpf, quantidade);
 
-            if (result > 0)
+            if (result.Invalid)
             {
-                return Ok(result);
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                if (result.StatusCode == StatusCodes.Status404NotFound)
+                    return NotFound(new ErrorModel(result.Notifications));
+
+                return BadRequest(new ErrorModel(result.Notifications));
             }
 
-            return BadRequest();
+            return Ok(result.Object);
         }
 
         /// <summary>
@@ -52,15 +61,23 @@ namespace DF.Ecommerce.Api.Controllers
         [HttpDelete]
         [ProducesResponseType(typeof(ItemCarrinhoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> LimparCarrinho(Guid idCarrinho)
+        public async Task<IActionResult> LimparCarrinho(string cpf)
         {
-            var result = await _itemCarrinhoAplication.LimparCarrinho(idCarrinho);
-            if (result > 0)
+            var result = await _itemCarrinhoAplication.LimparCarrinho(cpf);
+
+            if (result.Invalid)
             {
-                return Ok(result);
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                if (result.StatusCode == StatusCodes.Status404NotFound)
+                    return NotFound(new ErrorModel(result.Notifications));
+
+                return BadRequest(new ErrorModel(result.Notifications));
             }
 
-            return BadRequest();
+            return Ok(new MsgModel(result.Object));
 
         }
 
@@ -70,24 +87,26 @@ namespace DF.Ecommerce.Api.Controllers
         /// <returns>
         /// Retorna o Item Excluido
         /// </returns>
-        [HttpDelete("/itemcarrinho/{idProduto}/{idCarrinho}")]
+        [HttpDelete("{idProduto}/{cpf}")]
         [ProducesResponseType(typeof(ItemCarrinhoModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> RemoverItemCarrinho([FromRoute]Guid idProduto, [FromRoute] Guid idCarrinho)
+        public async Task<IActionResult> RemoverItemCarrinho([FromRoute]Guid idProduto, [FromRoute] string cpf)
         {
+            var result = await _itemCarrinhoAplication.RemoverItemCarrinho(idProduto, cpf);
 
-            if(string.IsNullOrEmpty(idCarrinho.ToString()) || string.IsNullOrEmpty(idProduto.ToString()))
+            if (result.Invalid)
             {
-                return BadRequest("Um dos Paramertros está vazio");
+                var logMessage = MensagemErro(result.Notifications);
+
+                Log.Error(logMessage);
+
+                if (result.StatusCode == StatusCodes.Status404NotFound)
+                    return NotFound(new ErrorModel(result.Notifications));
+
+                return BadRequest(new ErrorModel(result.Notifications));
             }
 
-            var result = await _itemCarrinhoAplication.RemoverItemCarrinho(idProduto, idCarrinho);
-            if (result > 0)
-            {
-                return Ok(result);
-            }
-
-            return BadRequest();
+            return Ok(new MsgModel(result.Object));
         }
     }
 }

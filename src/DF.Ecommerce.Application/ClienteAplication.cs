@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace DF.Ecommerce.Application
 {
-    public class ClienteAplication : Interfaces.IClienteAplication
+    public class ClienteAplication : IClienteAplication
     {
         private readonly IMapper _mapper;
-        private readonly Domain.Interfaces.Repository.IClienteRepository _clienteRepository;
+        private readonly IClienteRepository _clienteRepository;
 
 
-        public ClienteAplication(IMapper mapper, Domain.Interfaces.Repository.IClienteRepository clienteRepository)
+        public ClienteAplication(IMapper mapper,IClienteRepository clienteRepository)
         {
             _mapper = mapper;
             _clienteRepository = clienteRepository;
@@ -44,7 +44,7 @@ namespace DF.Ecommerce.Application
         public async Task<Result<ClienteModel>> AtualizarInformacoes(ClienteModel clienteModel)
         {
             var atualizado = _mapper.Map<Cliente>(clienteModel);
-            var clienteAtualizado = await _clienteRepository.Atualizar(atualizado);
+            var clienteAtualizado = await _clienteRepository.AtualizarInformacoes(atualizado);
             return Result<ClienteModel>.Ok(_mapper.Map<ClienteModel>(clienteAtualizado));
         }
 

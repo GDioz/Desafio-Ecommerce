@@ -22,7 +22,7 @@ namespace DF.Ecommerce.Infrastructure.Repository
         }
         public async Task<int> AtualizarQuantidade(Guid idProduto, Guid idCarrinho, int quantidade)
         {
-            var itemCarrinho = await _dbSet.FindAsync(idProduto,idCarrinho);
+            var itemCarrinho = await _dbSet.FindAsync(idCarrinho,idProduto);
             itemCarrinho.Quantidade += quantidade;
             _dbSet.Update(itemCarrinho);
             return await _context.SaveChangesAsync();
@@ -37,7 +37,7 @@ namespace DF.Ecommerce.Infrastructure.Repository
 
         public async Task<int> RemoverItemCarrinho(Guid idProduto, Guid idCarrinho)
         {
-            var itemCarrinho = await _dbSet.FindAsync(idProduto, idCarrinho);
+            var itemCarrinho = await _dbSet.FindAsync(idCarrinho, idProduto);
             _dbSet.Remove(itemCarrinho);
             return await _context.SaveChangesAsync();
         }

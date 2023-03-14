@@ -10,8 +10,8 @@ namespace DF.Ecommerce.Application.Interfaces
 {
     public interface IItemCarrinhoAplication
     {
-        Task<Result<string>> AtualizarQuantidade(Guid idProduto, Guid idCarrinho, int quantidade);
-        Task<Result<string>> RemoverItemCarrinho(Guid idProduto, Guid idCarrinho);
-        Task<Result<string>> LimparCarrinho(Guid idCarrinho);
+        Task<Result<CarrinhoModel>> AtualizarQuantidade(Guid idProduto, string documento, int quantidade);
+        Task<Result<string>> RemoverItemCarrinho(Guid idProduto, string documento);
+        Task<Result<string>> LimparCarrinho(string documento);
     }
 }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using DF.Ecommerce.Api.Assemblies;
 using DF.Ecommerce.Api.Config;
 using DF.Ecommerce.Api.Filters;
@@ -29,13 +30,6 @@ namespace DF.Ecommerce.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EcommerceApi", Description = "Api para Ecommerce", Version = "v1" });
-                var apiPath = Path.Combine(AppContext.BaseDirectory, "DF.Ecommerce.Api.xml");
-                
-                c.IncludeXmlComments(apiPath);
-            });
 
             services.AddApiVersioning(options =>
             {
@@ -83,6 +77,8 @@ namespace DF.Ecommerce.Api
 
             services.AddAuthentication("BasicAuthentication")
             .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+            SwaggerConfig.Register(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

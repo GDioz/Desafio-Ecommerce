@@ -150,7 +150,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
             modelBuilder.Entity("DF.Ecommerce.Domain.Entites.ItemCarrinho", b =>
                 {
                     b.HasOne("DF.Ecommerce.Domain.Entites.Carrinho", "Carrinho")
-                        .WithMany("ItensCarrinhos")
+                        .WithMany("ItemCarrinhos")
                         .HasForeignKey("IdCarrinho")
                         .IsRequired();
 
@@ -166,7 +166,7 @@ namespace DF.Ecommerce.Infrastructure.Migrations
 
             modelBuilder.Entity("DF.Ecommerce.Domain.Entites.Carrinho", b =>
                 {
-                    b.Navigation("ItensCarrinhos");
+                    b.Navigation("ItemCarrinhos");
                 });
 
             modelBuilder.Entity("DF.Ecommerce.Domain.Entites.Cliente", b =>
