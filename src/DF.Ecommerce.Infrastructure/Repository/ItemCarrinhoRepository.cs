@@ -24,7 +24,10 @@ namespace DF.Ecommerce.Infrastructure.Repository
         {
             var itemCarrinho = await _dbSet.FindAsync(idCarrinho,idProduto);
             itemCarrinho.Quantidade += quantidade;
-            _dbSet.Update(itemCarrinho);
+            if(itemCarrinho.Quantidade == 0)
+                _dbSet.Remove(itemCarrinho);
+            else
+                _dbSet.Update(itemCarrinho);
             return await _context.SaveChangesAsync();
         }
 

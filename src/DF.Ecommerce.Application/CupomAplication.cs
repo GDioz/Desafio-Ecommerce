@@ -40,7 +40,7 @@ namespace DF.Ecommerce.Application
         public async Task<Result<CupomModel>> AtualizarInformacoes(CupomModel cupomModel)
         {
             var atualizado = _mapper.Map<Cupom>(cupomModel);
-            var cupomAtualizado = await _cupomRepository.Atualizar(atualizado);
+            var cupomAtualizado = await _cupomRepository.AtualizarInformacoesDoCumpom(atualizado);
             return Result<CupomModel>.Ok(_mapper.Map<CupomModel>(cupomAtualizado));
         }
 

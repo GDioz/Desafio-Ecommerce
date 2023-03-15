@@ -37,7 +37,7 @@ namespace DF.Ecommerce.Application
             if (cliente != null)
             {
                 var result = await _unitOfWorkCarrinho.ItemCarrinhoRepository.AtualizarQuantidade(idProduto, cliente.Carrinho.Id, quantidade);
-
+                
                 RecalcularValorTotal(cliente);
                 if (result > 0)
                     return Result<CarrinhoModel>.Ok(_mapper.Map<CarrinhoModel>(cliente.Carrinho));
