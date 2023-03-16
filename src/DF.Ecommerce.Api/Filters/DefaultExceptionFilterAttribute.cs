@@ -13,7 +13,7 @@ namespace DF.Ecommerce.Api.Filters
         public override void OnException(ExceptionContext context)
         {
             Log.Error(context.Exception, context.Exception.Message);
-
+            
             context.Result = new ObjectResult(new ErrorModel(DEFAULT_EXCEPTION))
             {
                 StatusCode = HttpStatusCode.InternalServerError.GetHashCode()
